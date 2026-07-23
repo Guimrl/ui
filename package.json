@@ -1,14 +1,14 @@
 {
   "name": "@guimrl/ui",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.3",
   "type": "module",
   "main": "./dist/ui.umd.cjs",
   "module": "./dist/ui.js",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/src/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
+      "types": "./dist/src/index.d.ts",
       "import": "./dist/ui.js",
       "require": "./dist/ui.umd.cjs"
     }

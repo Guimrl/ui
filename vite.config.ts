@@ -14,7 +14,8 @@ export default defineConfig({
     react(),
     dts({
       insertTypesEntry: true,
-      include: ['src'],
+      include: ['src/components', 'src/index.ts', 'src/theme'],
+      tsconfigPath: './tsconfig.app.json',
     }),
   ],
   build: {
@@ -25,7 +26,6 @@ export default defineConfig({
       formats: ['es', 'umd'],
     },
     rollupOptions: {
-      // Externaliza react, react-dom e MUI para não duplicar no bundle do projeto final
       external: [
         'react',
         'react-dom',
@@ -38,6 +38,7 @@ export default defineConfig({
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
+          'react/jsx-runtime': 'jsxRuntime',
           '@mui/material': 'MaterialUI',
           '@emotion/react': 'EmotionReact',
           '@emotion/styled': 'EmotionStyled',
